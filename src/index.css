@@ -13,4 +13,23 @@ code {
 }
 main{
   padding: 10px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+main.dark{
+  background-color: #4d4d4d;
+  color: #fff;
+}
+main.light{
+  color: #4d4d4d;
+  background-color: #fff;
+}
+main.dark a{
+  background-color: #4d4d4d;
+  color: #fff;
+}
+main.light a{
+  color: #4d4d4d;
+  background-color: #fff;
 }

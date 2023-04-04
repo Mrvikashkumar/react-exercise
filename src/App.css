@@ -1,3 +1,20 @@
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}
+.link-container li a:hover{
+  text-decoration: none;
+}
+
 .box{
   width: 100px;
   height: 100px;
@@ -17,4 +34,36 @@ form p{
   display: inline-block;
   padding: 0;
   margin: 0;
+}
+
+.meme-page{
+  background-color: #ddd;
+  padding: 10px;
+  text-align: center;
+}
+.meme-text{
+  border: 1px solid #000;
+  display: inline-block;
+  padding: 5px;
+  margin-right: 5px;
+}
+.meme-img{
+  border: 1px solid black;
+  margin-top: 10px;
+}
+.meme-img img{
+  max-width: 500px;
+  width: 100%;
+}
+.meme-img p{
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+.window-tracker{
+  text-align: center;
+  border: 1px solid #000;
+  padding: 10px;
 }
