@@ -1,10 +1,17 @@
 import React from 'react'
 
-const TaskList = () => {
+const TaskList = ({tasks}) => {
+  console.log(tasks)
   return (
-    <div>
-      
-    </div>
+    <ul>
+      {tasks.map((task, index) => (
+        <li key={index}>
+          <input type="checkbox" id='input-text'/>
+          <label htmlFor='input-text'>{task.text}</label>
+          <button>delete</button>
+        </li>
+      ))}
+    </ul>
   )
 }
 

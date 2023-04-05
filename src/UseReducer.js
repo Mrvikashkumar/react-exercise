@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
+
+const reducer = (state, action) => {
+  switch(action.type){
+    case "increment":
+      return {...state, count: state.count + 1}
+    case "decrement":
+      return {...state, count: state.count - 1}
+    case 'userInput':
+      return {...state, text: action.payload}
+    case 'color':
+      return {...state, tgColor: action.tgColor}
+    default:
+      throw new Error('something wrong')
+  }
+
+}
 
 const UseReducer = () => {
-  const [text, setText] = useState("");
-  const [count, setCount] = useState(0);
-  const [tgColor, setTgColor] = useState(false);
+  const [state, dispatch] = useReducer(reducer, {count: 0, text: '', tgColor: ''})
 
   const handleTgColor = () => {
     let colorChar = [
@@ -34,23 +48,23 @@ const UseReducer = () => {
       color += colorChar[getRandomNum(colorChar.length)];
       selectedCharNum--;
     }
-    setTgColor(color);
+    dispatch({type: 'color', tgColor: color});
   };
 
   return (
-    <div style={{ color: `${tgColor}` }}>
+    <div style={{ color: `${state.tgColor}` }}>
       <input
         type="text"
         name="text"
         id="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={state.text}
+        onChange={(e) => dispatch({type: 'userInput', payload: e.target.value})}
       />
-      <p>{text ? text : "text preview here"}</p>
+      <p>{state.text ? state.text : "text preview here"}</p>
       <div>
-        <button onClick={() => setCount(count - 1)}>-</button>
-        <span>{count}</span>
-        <button onClick={() => setCount(count + 1)}>+</button>
+        <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+        <span>{state.count}</span>
+        <button onClick={() => dispatch({type: 'increment'})}>+</button>
       </div>
       <button onClick={handleTgColor}>change color</button>
     </div>

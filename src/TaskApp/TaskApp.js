@@ -2,13 +2,14 @@ import React, { useReducer } from "react";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
 
-const reducer = () => {
-  console.log("this reducer function");
+const reducer = (state, action) => {
+  console.log(state)
+  console.log(action)
 };
 
 const TaskApp = () => {
   const [state, dispatch] = useReducer(reducer, initialTasks);
-  console.log(state.length);
+  // console.log(state.length);
 
   const handleAddTask = (text) => {
     dispatch({
@@ -21,7 +22,7 @@ const TaskApp = () => {
   return (
     <>
       <h1>Prague itinerary</h1>
-      <AddTask tasks={state} onAddTask={handleAddTask} />
+      <AddTask tasks={state} onClickAdd={handleAddTask} />
       <TaskList
         tasks={state}
         // onChangeTask={handleChangeTask}

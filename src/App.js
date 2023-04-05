@@ -15,6 +15,7 @@ import SculptureGallery from "./SculptureGallery";
 import ChatApp from "./Chat-app/ChatApp";
 import TaskApp from "./TaskApp/TaskApp";
 import UseReducer from "./UseReducer";
+import FromSubmitUseReducer from "./Form submit/Form";
 
 const exercisesName = [
   "Box fill",
@@ -29,6 +30,7 @@ const exercisesName = [
   "Sculpture Gallery",
   "Chat app",
   "task App",
+  'form submit useReducer',
   "useReducer"
 ];
 
@@ -102,6 +104,7 @@ function App() {
           <Route path="/task-App" element={<TaskApp />} />
           <Route path="/sculpture-gallery" element={<SculptureGallery />} />
           <Route path="/useReducer" element={<UseReducer />} />
+          <Route path="/form-submit-useReducer" element={<FromSubmitUseReducer />} />
           <Route path="/chat-app" element={<ChatApp />} />
         </Routes>
       </main>
