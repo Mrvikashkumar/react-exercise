@@ -7,8 +7,8 @@ const reducer = (state, action) => {
       return { ...state, [action.field]: action.value };
     case "check":
       return { ...state, [action.field]: action.checked };
-    case 'showData':
-      return {...state, showData: true}
+    case "showData":
+      return { ...state, showData: true };
     default:
       throw new Error("Something is wrong");
   }
@@ -22,7 +22,7 @@ const initialValues = {
   isFriendly: null,
   employment: "",
   favColor: "",
-  showData: null
+  showData: null,
 };
 
 const Form = () => {
@@ -48,9 +48,8 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
-      type: 'showData',
-      
-    })
+      type: "showData",
+    });
     console.log(state);
   };
 
@@ -179,7 +178,7 @@ const Form = () => {
         {/* submit button */}
         <button>submit</button>
       </form>
-      {state.showData && <PersonDesc data={state}/>}
+      {state.showData && <PersonDesc data={state} />}
     </>
   );
 };

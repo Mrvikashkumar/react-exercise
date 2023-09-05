@@ -16,6 +16,7 @@ import ChatApp from "./Chat-app/ChatApp";
 import TaskApp from "./TaskApp/TaskApp";
 import UseReducer from "./UseReducer";
 import FromSubmitUseReducer from "./Form submit/Form";
+import ContextExp from "./ContextExp";
 
 const exercisesName = [
   "Box fill",
@@ -30,8 +31,9 @@ const exercisesName = [
   "Sculpture Gallery",
   "Chat app",
   "task App",
-  'form submit useReducer',
-  "useReducer"
+  "form submit useReducer",
+  "useReducer",
+  "context api",
 ];
 
 function App() {
@@ -104,8 +106,12 @@ function App() {
           <Route path="/task-App" element={<TaskApp />} />
           <Route path="/sculpture-gallery" element={<SculptureGallery />} />
           <Route path="/useReducer" element={<UseReducer />} />
-          <Route path="/form-submit-useReducer" element={<FromSubmitUseReducer />} />
+          <Route
+            path="/form-submit-useReducer"
+            element={<FromSubmitUseReducer />}
+          />
           <Route path="/chat-app" element={<ChatApp />} />
+          <Route path="/context-api" element={<ContextExp />} />
         </Routes>
       </main>
     </Router>
